@@ -1,0 +1,20 @@
+appVersion: v1
+kind      : deployment
+metadata  : 
+  name : flask-app
+  labels : 
+    app: flask-app
+spec :
+  replicas : 2
+  selector : 
+    matchlabels :
+      app : flask
+  template :
+    metadata : 
+      labels:
+        app: nginx
+    spec:
+      conatiners :
+      - name: flask
+        image: 
+        ports: 5000
