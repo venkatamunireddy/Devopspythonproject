@@ -1,20 +1,21 @@
-appVersion: v1
-kind      : deployment
-metadata  : 
-  name : flask-app
-  labels : 
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  labels:
     app: flask-app
-spec :
-  replicas : 2
-  selector : 
-    matchlabels :
-      app : flask
-  template :
-    metadata : 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
       labels:
-        app: nginx
+        app: flask-app
     spec:
-      conatiners :
-      - name: flask
+      containers:
+      - name: flask-app
         image: venkatamunireddy/firstpythonapplication:new
-        ports: 5000
+        ports:
+        - containerPort: 5000
