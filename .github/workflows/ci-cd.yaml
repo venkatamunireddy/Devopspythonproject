@@ -23,6 +23,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./Devopspythonproject/pythonapp
-        file : ./Dockerfile
+        file: ./Devopspythonproject/pythonapp/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/python-flaskapp:v1
